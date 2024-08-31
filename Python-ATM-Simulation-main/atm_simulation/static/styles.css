@@ -1,0 +1,142 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.atm-container {
+    background: #333;
+    color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px; /* Increased width for landscape view */
+    height: 100%;
+    max-height: 600px; /* Adjusted height */
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.atm-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.atm-display {
+    background: #444;
+    padding: 20px; /* Increased padding for better spacing */
+    border-radius: 5px;
+    height: 200px; /* Increased height for more space */
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    overflow: hidden;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message {
+    font-size: 18px; /* Increased font size for better readability */
+    margin: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.atm-controls {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.control-group {
+    margin-bottom: 20px; /* Increased space between controls */
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px; /* Increased padding for better input visibility */
+    border-radius: 5px;
+    border: 1px solid #555;
+    background: #666;
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 18px; /* Increased font size for better readability */
+    text-align: center; /* Center the text */
+}
+
+.atm-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 5px 0;
+}
+
+.atm-button:hover {
+    background-color: #0056b3;
+}
+
+.transaction-history {
+    overflow-y: auto;
+    max-height: 300px; /* Adjusted for better fit */
+    margin-top: 20px;
+    padding: 10px; /* Add padding to ensure content isn't flush against edges */
+    background: #444; /* Match background with ATM display */
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the total height */
+}
+
+.transaction-card {
+    background-color: #555;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .atm-container {
+        max-width: 100%;
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .input-field, .atm-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .transaction-card {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .atm-container {
+        padding: 10px;
+    }
+
+    .input-field, .atm-button {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .transaction-card {
+        padding: 6px;
+    }
+}

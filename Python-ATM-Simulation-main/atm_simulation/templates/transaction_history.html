@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="atm-container">
+        <div class="atm-header">
+            <h1>Transaction History</h1>
+        </div>
+        <div class="atm-display">
+            <div class="transaction-history">
+                {% if transactions %}
+                    {% for transaction in transactions %}
+                        <div class="transaction-card">
+                            <p>{{ transaction }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No transactions yet.</p>
+                {% endif %}
+            </div>
+        </div>
+        <a href="{{ url_for('index') }}" class="atm-button">Back to ATM</a>
+    </div>
+</body>
+</html>

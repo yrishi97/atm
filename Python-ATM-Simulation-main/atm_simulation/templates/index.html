@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="atm-container">
+        <div class="atm-header">
+            <h1>ATM Machine</h1>
+        </div>
+        <div class="atm-display">
+            <p class="message">{{ message }}</p>
+        </div>
+        <form method="POST" class="atm-controls">
+            <div class="control-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" class="input-field">
+            </div>
+            <div class="control-group">
+                <button type="submit" name="action" value="balance_inquiry" class="atm-button">Balance Inquiry</button>
+                <button type="submit" name="action" value="cash_withdrawal" class="atm-button">Withdraw</button>
+                <button type="submit" name="action" value="cash_deposit" class="atm-button">Deposit</button>
+            </div>
+            <div class="control-group">
+                <label for="old_pin">Old PIN:</label>
+                <input type="password" id="old_pin" name="old_pin" class="input-field">
+                <label for="new_pin">New PIN:</label>
+                <input type="password" id="new_pin" name="new_pin" class="input-field">
+            </div>
+            <div class="control-group">
+                <button type="submit" name="action" value="change_pin" class="atm-button">Change PIN</button>
+            </div>
+            <div class="control-group">
+                <a href="{{ url_for('transaction_history') }}" class="atm-button">Transaction History</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
